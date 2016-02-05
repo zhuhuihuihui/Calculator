@@ -9,8 +9,13 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
+    enum Operator: Int {
+        case Percentage, Divide, Multiply, Add, Minus, Equal
+    }
     
     @IBOutlet weak var screenLabel: UILabel!
+    
+    var arrayAsStack = [AnyObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,5 +30,22 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func numberTapped(sender: UIButton) {
+        if screenLabel.text == "0" && (sender.titleForState(UIControlState.Normal) ?? "") != "." {
+            screenLabel.text = ""
+        }
+        if (screenLabel.text ?? "").containsString(".") && (sender.titleForState(UIControlState.Normal) ?? "") == "." {
+            return
+        }
+        screenLabel.text?.appendContentsOf(sender.titleForState(UIControlState.Normal) ?? "")
+//        if let lastObjectInStack = arrayAsStack.last as? Operator {
+//            
+//        } else if let lastObjectInStack = arrayAsStack.last as? NSNumber {
+//            
+//        }
+    }
+    
+    @IBAction func ACTapped(sender: UIButton) {
+        screenLabel.text = "0"
+        arrayAsStack = []
     }
 }

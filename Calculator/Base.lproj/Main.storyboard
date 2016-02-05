@@ -22,8 +22,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrv-bk-jhw" userLabel="Screen">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="171"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="55555" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Dqa-Vf-9aM">
-                                        <rect key="frame" x="448" y="103" width="144" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Dqa-Vf-9aM">
+                                        <rect key="frame" x="562" y="103" width="30" height="60"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="50"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -53,6 +53,9 @@
                                                         <state key="normal" title="AC">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="ACTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vaq-fq-dDe"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scm-NG-YkT">
                                                         <rect key="frame" x="150" y="0.0" width="150" height="85"/>
@@ -247,6 +250,9 @@
                                                                 <state key="normal" title=".">
                                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="numberTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3bH-kJ-zDk"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEa-rG-wBZ">
                                                                 <rect key="frame" x="150" y="0.0" width="149" height="85"/>
