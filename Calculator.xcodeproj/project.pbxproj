@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2C8CCD51C65919C001F86B2 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8CCD41C65919C001F86B2 /* Operator.swift */; };
 		D2D35F6F1C618AF3003DA4FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D35F6E1C618AF3003DA4FE /* AppDelegate.swift */; };
 		D2D35F741C618AF3003DA4FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D35F721C618AF3003DA4FE /* Main.storyboard */; };
 		D2D35F761C618AF3003DA4FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2D35F751C618AF3003DA4FE /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2C8CCD41C65919C001F86B2 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		D2D35F6B1C618AF3003DA4FE /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D35F6E1C618AF3003DA4FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2D35F731C618AF3003DA4FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				D2D35F751C618AF3003DA4FE /* Assets.xcassets */,
 				D2D35F771C618AF3003DA4FE /* LaunchScreen.storyboard */,
 				D2D35F7A1C618AF3003DA4FE /* Info.plist */,
+				D2C8CCD41C65919C001F86B2 /* Operator.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2D35F8F1C618D92003DA4FE /* CalculatorViewController.swift in Sources */,
+				D2C8CCD51C65919C001F86B2 /* Operator.swift in Sources */,
 				D2D35F6F1C618AF3003DA4FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +392,7 @@
 				D2D35F8A1C618AF3003DA4FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2D35F8B1C618AF3003DA4FE /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +401,7 @@
 				D2D35F8D1C618AF3003DA4FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
