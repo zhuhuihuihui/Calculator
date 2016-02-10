@@ -64,6 +64,9 @@
                                                         <state key="normal" title="+/_">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="negativeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdR-EN-Y6f"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PG-AX-3C8">
                                                         <rect key="frame" x="301" y="0.0" width="149" height="85"/>
@@ -73,7 +76,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="operatorTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="35N-Du-IrO"/>
+                                                            <action selector="percentageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FqW-le-S12"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8f-2F-DM9">
