@@ -46,115 +46,66 @@ class CalculatorViewController: UIViewController {
                 if isUserEndTyping && operatorType != .Equal {
                     arrayAsStack.removeLast()
                     arrayAsStack.append(Operator(withType: operatorType))
-                } else if isUserEndTyping && operatorType == .Equal {
-                    /**1 Get number from the screen.*/
-                    if let tempNum = tempNum {
-                        arrayAsStack.append(tempNum)
-                        /**2. Calculate the first three in the stack*/
-                        if let rightNum = arrayAsStack.popLast() as? NSNumber, myOperator = arrayAsStack.popLast() as? Operator, leftNum = arrayAsStack.popLast() as? NSNumber {
-                            switch myOperator.myOperator {
-                            case OperatorType.Add:
-                                if let resultNum = "\(leftNum.doubleValue + rightNum.doubleValue)".numberValue() {
-                                    screenLabel.text = resultNum.stringValue
-                                    arrayAsStack.append(resultNum)
-                                    arrayAsStack.append(Operator(withType: operatorType))
-                                }
-                                break
-                            case OperatorType.Minus:
-                                if let resultNum = "\(leftNum.doubleValue - rightNum.doubleValue)".numberValue() {
-                                    screenLabel.text = resultNum.stringValue
-                                    arrayAsStack.append(resultNum)
-                                    arrayAsStack.append(Operator(withType: operatorType))
-                                }
-                                break
-                            case OperatorType.Multiply:
-                                if let resultNum = "\(leftNum.doubleValue * rightNum.doubleValue)".numberValue() {
-                                    screenLabel.text = resultNum.stringValue
-                                    arrayAsStack.append(resultNum)
-                                    arrayAsStack.append(Operator(withType: operatorType))
-                                }
-                                break
-                            case OperatorType.Divide:
-                                if rightNum.doubleValue == 0 {
-                                    arrayAsStack.removeAll()
-                                    screenLabel.text = "0"
-                                    return
-                                }
-                                if let resultNum = "\(leftNum.doubleValue / rightNum.doubleValue)".numberValue() {
-                                    screenLabel.text = resultNum.stringValue
-                                    arrayAsStack.append(resultNum)
-                                    arrayAsStack.append(Operator(withType: operatorType))
-                                }
-                                break
-                            default:
-                                break
-                            }
-                            if operatorType == OperatorType.Equal && arrayAsStack.count > 0 {
-                                arrayAsStack.removeLast()
-                                arrayAsStack.append(myOperator)
-                            }
-                        }
-                        return
-                    }
                 } else {
-                    /**1 Get number from the screen.*/
-                    if let numberString = screenLabel.text {
-                        if let number = numberString.numberValue() {
-                            arrayAsStack.append(number)
-                            /**2. Calculate the first three in the stack*/
-                            if let rightNum = arrayAsStack.popLast() as? NSNumber, myOperator = arrayAsStack.popLast() as? Operator, leftNum = arrayAsStack.popLast() as? NSNumber {
-                                if operatorType == OperatorType.Equal {
-                                    tempNum = number
-                                }
-                                
-                                switch myOperator.myOperator {
-                                case OperatorType.Add:
-                                    if let resultNum = "\(leftNum.doubleValue + rightNum.doubleValue)".numberValue() {
-                                        screenLabel.text = resultNum.stringValue
-                                        arrayAsStack.append(resultNum)
-                                        arrayAsStack.append(Operator(withType: operatorType))
-                                    }
-                                    break
-                                case OperatorType.Minus:
-                                    if let resultNum = "\(leftNum.doubleValue - rightNum.doubleValue)".numberValue() {
-                                        screenLabel.text = resultNum.stringValue
-                                        arrayAsStack.append(resultNum)
-                                        arrayAsStack.append(Operator(withType: operatorType))
-                                    }
-                                    break
-                                case OperatorType.Multiply:
-                                    if let resultNum = "\(leftNum.doubleValue * rightNum.doubleValue)".numberValue() {
-                                        screenLabel.text = resultNum.stringValue
-                                        arrayAsStack.append(resultNum)
-                                        arrayAsStack.append(Operator(withType: operatorType))
-                                    }
-                                    break
-                                case OperatorType.Divide:
-                                    if rightNum.doubleValue == 0 {
-                                        arrayAsStack.removeAll()
-                                        screenLabel.text = "0"
-                                        return
-                                    }
-                                    if let resultNum = "\(leftNum.doubleValue / rightNum.doubleValue)".numberValue() {
-                                        screenLabel.text = resultNum.stringValue
-                                        arrayAsStack.append(resultNum)
-                                        arrayAsStack.append(Operator(withType: operatorType))
-                                    }
-                                    break
-                                default:
-                                    break
-                                }
-                                if operatorType == OperatorType.Equal && arrayAsStack.count > 0 {
-                                    arrayAsStack.removeLast()
-                                    arrayAsStack.append(myOperator)
-                                }
-                            }
+                    /**1 Get number.*/
+                    if isUserEndTyping && operatorType == .Equal && tempNum != nil {
+                        arrayAsStack.append(tempNum!)
+                    } else if let numberString = screenLabel.text, number = numberString.numberValue() {
+                        arrayAsStack.append(number)
+                    }
+                    
+                    /**2. Calculate the first three in the stack*/
+                    if let rightNum = arrayAsStack.popLast() as? NSNumber, myOperator = arrayAsStack.popLast() as? Operator, leftNum = arrayAsStack.popLast() as? NSNumber {
+                        if operatorType == OperatorType.Equal {
+                            tempNum = rightNum
                         }
+                        switch myOperator.myOperator {
+                        case OperatorType.Add:
+                            if let resultNum = "\(leftNum.doubleValue + rightNum.doubleValue)".numberValue() {
+                                screenLabel.text = resultNum.stringValue
+                                arrayAsStack.append(resultNum)
+                                arrayAsStack.append(Operator(withType: operatorType))
+                            }
+                            break
+                        case OperatorType.Minus:
+                            if let resultNum = "\(leftNum.doubleValue - rightNum.doubleValue)".numberValue() {
+                                screenLabel.text = resultNum.stringValue
+                                arrayAsStack.append(resultNum)
+                                arrayAsStack.append(Operator(withType: operatorType))
+                            }
+                            break
+                        case OperatorType.Multiply:
+                            if let resultNum = "\(leftNum.doubleValue * rightNum.doubleValue)".numberValue() {
+                                screenLabel.text = resultNum.stringValue
+                                arrayAsStack.append(resultNum)
+                                arrayAsStack.append(Operator(withType: operatorType))
+                            }
+                            break
+                        case OperatorType.Divide:
+                            if rightNum.doubleValue == 0 {
+                                arrayAsStack.removeAll()
+                                screenLabel.text = "0"
+                                return
+                            }
+                            if let resultNum = "\(leftNum.doubleValue / rightNum.doubleValue)".numberValue() {
+                                screenLabel.text = resultNum.stringValue
+                                arrayAsStack.append(resultNum)
+                                arrayAsStack.append(Operator(withType: operatorType))
+                            }
+                            break
+                        default:
+                            break
+                        }
+                        if operatorType == OperatorType.Equal && arrayAsStack.count > 0 {
+                            arrayAsStack.removeLast()
+                            arrayAsStack.append(myOperator)
+                        }
+                    }
+                    if isUserEndTyping && operatorType == .Equal {
+                        return
                     }
                 }
             }
-        } else if let _ = arrayAsStack.last as? NSNumber {
-            
         } else {
             //Nothing in the Stack
             if let numberString = screenLabel.text, operatorType = OperatorType(rawValue: sender.titleForState(UIControlState.Normal) ?? "") where arrayAsStack.isEmpty {
