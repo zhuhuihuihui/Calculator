@@ -29,20 +29,9 @@ class CalculatorViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func negativeTapped(sender: UIButton) {
+    @IBAction func percentageOrNegativeTapped(sender: UIButton) {
         if let numberString = screenLabel.text, number = numberString.numberValue() where number.doubleValue != 0 {
-            if let resultNum = "\(number.doubleValue * -1)".numberValue() {
-                screenLabel.text = resultNum.stringValue
-                if isUserEndTyping {
-                    arrayAsStack[0] = resultNum
-                }
-            }
-        }
-    }
-    
-    @IBAction func percentageTapped(sender: UIButton) {
-        if let numberString = screenLabel.text, number = numberString.numberValue() where number.doubleValue != 0 {
-            if let resultNum = "\(number.doubleValue * 0.01)".numberValue() {
+            if let resultNum = "\(number.doubleValue * (sender.titleForState(UIControlState.Normal) == "%" ? 0.01 : -1 ))".numberValue() {
                 screenLabel.text = resultNum.stringValue
                 if isUserEndTyping {
                     arrayAsStack[0] = resultNum

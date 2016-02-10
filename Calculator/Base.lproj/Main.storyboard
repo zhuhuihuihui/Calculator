@@ -65,7 +65,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="negativeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdR-EN-Y6f"/>
+                                                            <action selector="percentageOrNegativeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N5Q-ef-X7H"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PG-AX-3C8">
@@ -76,7 +76,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="percentageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FqW-le-S12"/>
+                                                            <action selector="percentageOrNegativeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PfX-dW-oSE"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8f-2F-DM9">
